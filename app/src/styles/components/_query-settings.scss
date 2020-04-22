@@ -1,0 +1,8 @@
+.query-settings {
+  display: flex;
+  justify-content: space-between;
+  margin-top: $m-size;
+  > * {
+    padding: 1rem;
+  }
+}
