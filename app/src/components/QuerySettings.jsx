@@ -8,7 +8,11 @@ const QuerySettings = props => {
         placeholder="Search for a country..."
         className="query-settings__search"
         value={props.countrySearch}
-        onChange={props.handleUpdateCountrySearch}
+        onChange={event => {
+          props.handleUpdateCountrySearch(event).then(() => {
+            props.fetchCountries();
+          });
+        }}
       />
       <select
         name=""
@@ -16,14 +20,15 @@ const QuerySettings = props => {
         className="query-settings__region"
         onChange={props.handleUpdateCountryFilter}
       >
-        <option value="" disabled selected>
+        <option value="None" disabled selected>
           Filter by Region
         </option>
-        <option value="africa">Africa</option>
-        <option value="america">America</option>
-        <option value="asia">Asia</option>
-        <option value="europe">Europe</option>
-        <option value="oceania">Oceania</option>
+        <option value="None">(No filter)</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">Americas</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
       </select>
     </div>
   );

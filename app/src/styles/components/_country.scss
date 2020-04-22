@@ -1,0 +1,32 @@
+.country {
+  background-color: white;
+  height: 500px;
+  display: inline-block;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 1px 5px 0px rgba(209, 209, 209, 1);
+  -moz-box-shadow: 2px 1px 5px 0px rgba(209, 209, 209, 1);
+  box-shadow: 2px 1px 5px 0px rgba(209, 209, 209, 1);
+  &__flag-container {
+    overflow: hidden;
+    &__flag {
+      height: 200px;
+      width: 200px;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, 0%);
+      position: relative;
+      top: 50%;
+      left: 50%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  }
+
+  &__info {
+    padding: $s-size;
+    font-size: 1.6rem;
+    &__name {
+      margin-bottom: $s-size;
+    }
+  }
+}
