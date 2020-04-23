@@ -6,6 +6,11 @@
   -webkit-box-shadow: 2px 1px 5px 0px rgba(209, 209, 209, 1);
   -moz-box-shadow: 2px 1px 5px 0px rgba(209, 209, 209, 1);
   box-shadow: 2px 1px 5px 0px rgba(209, 209, 209, 1);
+
+  &:hover {
+    cursor: pointer;
+  }
+
   &__flag-container {
     overflow: hidden;
     &__flag {

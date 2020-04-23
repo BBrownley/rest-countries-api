@@ -5,7 +5,7 @@ const Countries = props => {
   return (
     <div className="countries">
       {props.countries.length === 0 ? <h1>No countries found</h1> : ""}
-      {props.countries.map(country => {
+      {props.countries.map((country, index) => {
         return (
           <Country
             name={country.name}
@@ -13,6 +13,9 @@ const Countries = props => {
             population={country.population}
             region={country.region}
             capital={country.capital}
+            openCountryInfo={props.openCountryInfo}
+            key={index}
+            alpha3Code={country.alpha3Code}
           />
         );
       })}

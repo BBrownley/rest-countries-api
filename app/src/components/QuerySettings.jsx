@@ -19,8 +19,9 @@ const QuerySettings = props => {
         id=""
         className="query-settings__region"
         onChange={props.handleUpdateCountryFilter}
+        value={props.countryFilter}
       >
-        <option value="None" disabled selected>
+        <option value="None" disabled>
           Filter by Region
         </option>
         <option value="None">(No filter)</option>

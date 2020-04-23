@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import Header from "./Header";
-import QuerySettings from "./QuerySettings";
-import Countries from "./Countries";
+import Home from "./Home";
 
 class CountriesApp extends React.Component {
   constructor() {
@@ -15,6 +16,7 @@ class CountriesApp extends React.Component {
     this.handleUpdateCountryFilter = this.handleUpdateCountryFilter.bind(this);
     this.fetchCountries = this.fetchCountries.bind(this);
     this.filterCountriesByRegion = this.filterCountriesByRegion.bind(this);
+    this.openCountryInfo = this.openCountryInfo.bind(this);
   }
 
   componentDidMount() {
@@ -83,19 +85,33 @@ class CountriesApp extends React.Component {
     });
   }
 
+  openCountryInfo(e) {
+    const countryCode = e.target.getAttribute("data-alpha3Code");
+    console.log(countryCode);
+  }
+
   render() {
     return (
       <div className="countries-app">
         <Header />
         <div className="wrapper">
-          <QuerySettings
-            countrySearch={this.state.countrySearch}
-            countryFilter={this.state.countryFilter}
-            handleUpdateCountrySearch={this.handleUpdateCountrySearch}
-            handleUpdateCountryFilter={this.handleUpdateCountryFilter}
-            fetchCountries={this.fetchCountries}
-          />
-          <Countries countries={this.state.countries} />
+          <Router>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <Home
+                  countrySearch={this.state.countrySearch}
+                  countryFilter={this.state.countryFilter}
+                  handleUpdateCountrySearch={this.handleUpdateCountrySearch}
+                  handleUpdateCountryFilter={this.handleUpdateCountryFilter}
+                  fetchCountries={this.fetchCountries}
+                  countries={this.state.countries}
+                  openCountryInfo={this.openCountryInfo}
+                />
+              )}
+            />
+          </Router>
         </div>
       </div>
     );

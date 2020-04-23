@@ -4,7 +4,11 @@ const numeral = require("numeral");
 
 const Country = props => {
   return (
-    <div className="country">
+    <div
+      className="country"
+      onClickCapture={props.openCountryInfo}
+      data-alpha3code={props.alpha3Code}
+    >
       <div className="country__flag-container">
         <img
           src={props.flag}
