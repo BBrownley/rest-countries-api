@@ -5,7 +5,11 @@
   display: flex;
   align-items: center;
   background-color: white;
-  margin-bottom: $m-size;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
 
   &__wrapper {
     margin: 0 auto;

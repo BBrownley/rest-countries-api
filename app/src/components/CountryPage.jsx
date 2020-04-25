@@ -50,7 +50,7 @@ const CountryPage = props => {
             <p>
               <strong>Languages: </strong>
               {languages.map(language => {
-                return language.name;
+                return `■ ${language.name} `;
               })}
             </p>
             <p>

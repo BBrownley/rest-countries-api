@@ -1,7 +1,7 @@
 .countries {
   display: grid;
   grid-gap: $m-size;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   justify-content: space-between;
   margin-bottom: $m-size;
 }
