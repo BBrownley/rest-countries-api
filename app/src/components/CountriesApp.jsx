@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./Header";
 import Home from "./Home";
+import CountryPage from "./CountryPage";
 
 class CountriesApp extends React.Component {
   constructor() {
@@ -16,7 +17,6 @@ class CountriesApp extends React.Component {
     this.handleUpdateCountryFilter = this.handleUpdateCountryFilter.bind(this);
     this.fetchCountries = this.fetchCountries.bind(this);
     this.filterCountriesByRegion = this.filterCountriesByRegion.bind(this);
-    this.openCountryInfo = this.openCountryInfo.bind(this);
   }
 
   componentDidMount() {
@@ -85,11 +85,6 @@ class CountriesApp extends React.Component {
     });
   }
 
-  openCountryInfo(e) {
-    const countryCode = e.target.getAttribute("data-alpha3Code");
-    console.log(countryCode);
-  }
-
   render() {
     return (
       <div className="countries-app">
@@ -107,10 +102,10 @@ class CountriesApp extends React.Component {
                   handleUpdateCountryFilter={this.handleUpdateCountryFilter}
                   fetchCountries={this.fetchCountries}
                   countries={this.state.countries}
-                  openCountryInfo={this.openCountryInfo}
                 />
               )}
             />
+            <Route path="/country/:countryName" component={CountryPage} />
           </Router>
         </div>
       </div>

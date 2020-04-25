@@ -21,13 +21,22 @@ body {
   background: none;
   border: 1px solid black;
   border-radius: 1rem;
-  &-no-border {
+  &:hover {
+    cursor: pointer;
+  }
+  &--no-border {
     border: none;
+  }
+  &--long {
+    padding-left: $l-size;
+    padding-right: $l-size;
   }
 }
 
 .wrapper {
-  padding: 0 $l-size;
+  // padding: 0 $m-size;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 // @media (max-width: $breakpoint-desktop) {

@@ -6,16 +6,36 @@ const Countries = props => {
     <div className="countries">
       {props.countries.length === 0 ? <h1>No countries found</h1> : ""}
       {props.countries.map((country, index) => {
+        const {
+          name,
+          nativeName,
+          flag,
+          population,
+          region,
+          capital,
+          alpha3Code,
+          currencies,
+          languages,
+          subregion,
+          borders
+        } = country;
+
         return (
           <Country
-            name={country.name}
-            flag={country.flag}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
+            name={name}
+            nativeName={nativeName}
+            topLevelDomain={country.topLevelDomain[0]}
+            flag={flag}
+            population={population}
+            region={region}
+            capital={capital}
             openCountryInfo={props.openCountryInfo}
             key={index}
-            alpha3Code={country.alpha3Code}
+            alpha3Code={alpha3Code}
+            currencies={currencies}
+            languages={languages}
+            subregion={subregion}
+            borders={borders}
           />
         );
       })}

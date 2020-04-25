@@ -1,10 +1,44 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 const numeral = require("numeral");
 
 const Country = props => {
+  const {
+    flag,
+    name,
+    topLevelDomain,
+    population,
+    region,
+    subregion,
+    capital,
+    currencies,
+    languages,
+    nativeName,
+    borders
+  } = props;
+
+  console.log(borders);
+
   return (
-    <div
+    <Link
+      to={{
+        pathname: `/country/${props.name}`,
+        state: {
+          flag,
+          name,
+          topLevelDomain,
+          population,
+          region,
+          subregion,
+          capital,
+          currencies,
+          languages,
+          nativeName,
+          borders
+        }
+      }}
       className="country"
       onClickCapture={props.openCountryInfo}
       data-alpha3code={props.alpha3Code}
@@ -35,7 +69,7 @@ const Country = props => {
           {props.capital.trim() === "" ? "N/A" : props.capital}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

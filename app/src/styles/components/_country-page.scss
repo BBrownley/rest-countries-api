@@ -1,0 +1,42 @@
+// .country-page {
+//   &__wrapper {
+//     margin-top: $m-size;
+//     background-color: #aaa;
+//     display: flex;
+//     > * {
+//       flex: 1;
+//     }
+//     &__flag {
+//       flex: 1;
+//     }
+//   }
+// }
+
+.country-page {
+  &__wrapper {
+    margin-top: $m-size;
+
+    display: flex;
+    > * {
+      flex: 1;
+    }
+  }
+  .flag-container {
+    &__img {
+      width: 100%;
+    }
+  }
+  &__info {
+    font-size: $s-size;
+    text-align: center;
+    align-self: center;
+  }
+}
+
+.border-country,
+.currency {
+  padding: 0.5rem $s-size;
+  margin-left: 0.5rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
